@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+      stage('Checkout') {
             steps {
                 git branch: 'ahmed', url: 'https://github.com/wolf8534/master.git' 
             }
         }
-        stage('build docker ') {
+      stage('build docker ') {
             steps {
                 script {
                 
@@ -16,7 +16,7 @@ pipeline {
             }
         }
     }
-        stage('build docker ') {
+      stage('build docker ') {
             steps {
                 script {
                 
