@@ -11,7 +11,7 @@ pipeline {
                 script {
                 
                     sh 'chmod +x hello.sh'  // Make the script executable (if not already)
-                    sh './scripts/hello.sh'          // Run the Hello World script
+                    sh './master/hello.sh'          // Run the Hello World script
                 }
             }
         }
