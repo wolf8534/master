@@ -6,7 +6,7 @@ pipeline {
                 git branch: 'ahmed', url: 'https://github.com/wolf8534/master.git' 
             }
         }
-        stage('Build Docker Image') {
+        stage('runscript ') {
             steps {
                 // run scripts
                 sh 'chmod +x Dockerfile'
