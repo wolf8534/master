@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/wolf8534/master.git'  // Replace with your repository URL
+                git branch: 'main', url: 'https://github.com/wolf8534/master.git'
             }
         }
         stage('Build Docker Image') {
