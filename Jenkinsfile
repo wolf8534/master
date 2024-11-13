@@ -8,8 +8,9 @@ pipeline {
         }
         stage('runscript ') {
             steps {
+                sh 'ls -l'
                 // run scripts
-                sh ' sudo chmod +x script'
+                sh 'chmod +x script'
                 sh './script' 
             }
         }
