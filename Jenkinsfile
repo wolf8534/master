@@ -13,8 +13,8 @@ pipeline {
                     // بناء صورة Docker باستخدام Dockerfile
                     sh 'docker build . -f Dockerfile -t docker.io/ahmedmaher07/doc:v0'
                     //run scripts
-                    sh 'chmod +x HELLO.sh
-                    sh './HELLO.sh'
+                    sh 'chmod +x Dockerfile'
+                    sh './Dockefile'
                 }
             }
         }
