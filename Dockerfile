@@ -1,4 +1,5 @@
 FROM    jenkins/jenkins:lts
-RUN      apt-get update -qq
+USER    root
+RUN     apt-get update -qq
 
    
