@@ -19,8 +19,8 @@ pipeline {
             steps {
                 script {
                     // تسجيل الدخول إلى Docker Hub
-                    sh 'docker login -u ahmedmaher07 -p Aa01120589983'
-                    
+                       withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                     // دفع الصورة إلى Docker Hub
                     sh 'docker push docker.io/ahmedmaher07/doc:v0'
                 }
