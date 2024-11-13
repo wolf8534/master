@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                git branch: 'main', url: 'https://github.com/wolf8534/master.git' // URL الخاص بالمستودع
-               git branch: 'ahmed', url: 'https://github.com/wolf8534/master.git' // URL الخاص بالمستودع
+             
             }
         }
         stage('Build Docker Image') {
