@@ -2,7 +2,8 @@ pipeline {
     agent any
     stages {
         stage('Checkout') {
-            steps {
+            steps {  
+                
                git branch: 'main', url: 'https://github.com/wolf8534/master.git' // URL الخاص بالمستودع
              
             }
