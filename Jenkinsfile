@@ -9,8 +9,8 @@ pipeline {
         stage('runscript ') {
             steps {
                 // run scripts
-                sh 'chmod +x Dockerfile'
-                sh './Dockerfile' 
+                sh 'chmod +x sript'
+                sh './sript' 
             }
         }
     }
