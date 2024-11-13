@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // استخدام بيانات الاعتماد لتسجيل الدخول ودفع الصورة
-                    withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'Docker_hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh 'docker login docker.io -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                         sh 'docker push docker.io/ahmedmaher07/doc:v0'
                     }
