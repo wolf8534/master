@@ -4,13 +4,15 @@ pipeline {
         stage('Checkout') {
             steps {
                git branch: 'main', url: 'https://github.com/wolf8534/master.git' // URL الخاص بالمستودع
+               git branch: 'ahmed', url: 'https://github.com/wolf8534/master.git' // URL الخاص بالمستودع
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    // بناء صورة Docker باستخدام Dockerfile
+                    // 
                     sh 'docker build . -f Dockerfile -t docker.io/ahmedmaher07/doc:v0'
+                    sh '
                 }
             }
         }
