@@ -10,8 +10,8 @@ pipeline {
             steps {
                 script {
                 
-                    sh 'chmod +x h.py'  // Make the script executable (if not already)
-                    sh './h.py'          // Run the Hello World script
+                    sh 'chmod +x h.sh'  // Make the script executable (if not already)
+                    sh './h.sh'          // Run the Hello World script
                 }
             }
         }
