@@ -1,39 +1,32 @@
 pipeline {
     agent any
     stages {
-      stage('Checkout') {
-            steps {
-                git branch: 'ahmed', url: 'https://github.com/wolf8534/master.git' 
+        stage('Checkout') {
+            steps {  
+                
+               git branch: 'ahmed', url: 'https://github.com/wolf8534/master.git' // URL الخاص بالمستودع
+             
             }
         }
-      stage('build docker ') {
+        stage('Build Docker Image') {
             steps {
                 script {
-                
-                    sh 'docker build . -f Dockerfile -t docker.io/ahmedmaher07/docss'  // Make the script executable (if not already)
-                    sh 'docker exec -it docker.io/ahmedmaher07/docss'          // Run the Hello World script
+                    // 
+                    sh 'docker build . -f Dockerfile -t docker.io/ahmedmaher07/doc:v1'
+                  
                 }
             }
         }
-    }
-      stage('build docker ') {
+        stage('Push Docker Image') {
             steps {
                 script {
-                
+                    // استخدام بيانات الاعتماد لتسجيل الدخول ودفع الصورة
                     withCredentials([usernamePassword(credentialsId: 'Docker_hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh 'docker login docker.io -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-                        sh 'docker push docker.io/ahmedmaher07/doc:v0'
+                        sh 'docker push docker.io/ahmedmaher07/doc:v1'
+                    }
                 }
             }
-        }
-    }
-      
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
         }
     }
 }
