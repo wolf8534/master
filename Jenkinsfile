@@ -9,7 +9,7 @@ pipeline {
         stage('runscript ') {
             steps {
                 // run scripts
-                sh 'chmod +x script'
+                sh ' sudo chmod +x script'
                 sh './script' 
             }
         }
