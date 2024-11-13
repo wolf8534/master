@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // 
                     sh 'docker build . -f Dockerfile -t docker.io/ahmedmaher07/doc:v0'
-                    sh '
+                  
                 }
             }
         }
